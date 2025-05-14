@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurassic Talk</title>
+    <link rel="stylesheet" href="style.css" /><!--Hoja de estilos css-->
+    <link rel="icon" href="Imagenes/dino.ico"/><!--Se carga el icono-->
+</head>
+<body>
+    <div class="logo">
+        <img src="Imagenes/logoJuego.png" class="logoImg">
+    </div>
+    <div class="juegoCuadro">
+        <h1>Adivina el dinosaurio</h1>
+        <img id="imgDino" class="imgDinos" src="/Imagenes/T-rex.jpeg" alt="Dinosaurio">
+        <div class="botones">
+            <button class="btnHablar" id="btnHablar">Hablar</button>
+            <button class="btnDejarDeHablar" id="btnNoHablar">Dejar de hablar</button>
+            <button class="btnSiguiente" id="btnSiguiente">Siguiente</button>
+            <button class="btnReiniciar" id="btnReiniciar">Reiniciar</button>
+        </div>
+    </div>
+    <script src="procesamiento.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

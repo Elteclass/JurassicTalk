@@ -1,0 +1,179 @@
+/* Reset y estilos base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%),
+        url(Imagenes/fondoSelva.jpg) center center / cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.logo {
+    position: fixed; /* Fijo en la pantalla */
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Para que esté sobre todos los elementos */
+    width: 150px; /* Ajusta el tamaño */
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); /* Sombra suave */
+    transition: transform 0.3s;
+}
+
+.logoImg {
+    width: 100%;
+    height: auto;
+}
+
+.logo:hover {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+}
+
+/* Contenedor principal del juego */
+.juegoCuadro {
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+    min-height: 90vh;
+    max-height: 650px;
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto de sombra difuminada */
+.juegoCuadro::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(135deg, #141517 0%, #6A9113 100%);
+    border-radius: 25px;
+    filter: blur(25px);
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* Estilo del título */
+.juegoCuadro h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(106, 145, 19, 0.3);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Estilo de la imagen del dinosaurio */
+.imgDinos {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 25px;
+    margin: 1rem auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.imgDinos:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de botones */
+.botones {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+/* Estilos base para botones */
+.btnHablar, .btnDejarDeHablar, .btnSiguiente, .btnReiniciar {
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico para cada botón */
+.btnHablar {
+    background: linear-gradient(to right, #1D8348, #28B463);
+    color: white;
+}
+
+.btnDejarDeHablar {
+    background: linear-gradient(to right, #A04000, #CA6F1E);
+    color: white;
+}
+
+.btnSiguiente {
+    background: linear-gradient(to right, #2874A6, #3498DB);
+    color: white;
+}
+
+.btnReiniciar {
+    background: linear-gradient(to right, #6C3483, #9B59B6);
+    color: white;
+}
+
+/* Efectos hover para botones */
+.btnHablar:hover, .btnDejarDeHablar:hover, 
+.btnSiguiente:hover, .btnReiniciar:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+/* Media queries para responsive */
+@media (max-width: 480px) {
+    .juegoCuadro {
+        width: 100%;
+        min-height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        padding: 1.5rem 1rem;
+    }
+    
+    .juegoCuadro::after {
+        display: none;
+    }
+    
+    .imgDinos {
+        max-width: 200px;
+    }
+    
+    .juegoCuadro h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animación sutil al cargar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.juegoCuadro {
+    animation: fadeIn 0.6s ease-out forwards;
+}
